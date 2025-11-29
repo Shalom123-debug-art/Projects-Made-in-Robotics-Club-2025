@@ -44,7 +44,6 @@
       max-width: 500px;
       border-radius: 10px;
     }
-
     button {
       background: #2ecc71;
       color: white;
@@ -54,13 +53,22 @@
       cursor: pointer;
       border-radius: 5px;
     }
+    #toggle-button {
+      background: #2ecc71;
+      font-size: 1.1rem;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+    #extra-information {
+      display: none;
+    }
     a {
       text-decoration: none;
       background: #2ecc71;
       padding: 10px 20px;
       border-radius: 5px;
       color: white;
-      margin-top: 20px;
+      margin-top: 15px;
       display: inline-block;
     }
     footer {
@@ -74,6 +82,9 @@
 <body>
   <div class="container">
     <h2>About Shali Grade Calculator</h2>
+    <div class="image-box">
+      <img src="https://img.sanishtech.com/u/d60156614bf835fee4c2d4d5a515f877.jpg" alt="My Logo">
+    </div>
     <p>I've designed this grade calculator to help students see where they are in terms of academics and 
       improve their scores based on the internationally accepted GPA (Grade Point Average) range. 
     </p>
@@ -87,20 +98,37 @@
       <img src="https://bloximages.chicago2.vip.townnews.com/somdnews.com/content/tncms/assets/v3/editorial/f/1c/f1cda9ba-2f51-5915-96f8-7b53f5b3c82f/578d0d4d516e0.image.png?resize=390%2C500" alt="College Board's GPA Conversion Chart">
       <div>The above GPA converion chart is the one I used for my calculator.</div>
     </div>
-    <p>
-      The website is very simple to use. As soon as you click on the "Go to calculator" button
-      below, it sends you to another page containing the calculator. There, you enter your scores of as many
-      subjects you want (you can also add the subjects' names but it's optional), and when you click on the "calculate" 
-      buttona, it provides you with your GPA, letter grade, and motivational comment.
-    </p>
-    <p>
-      Have fun using the <em>Shali Grade Calculator</em>!
-    </p>
-    <a href="gradeCalculatorPage.html">Go to Calculator</a>
+    <div id="extra-information">
+      <p>
+        The website is very simple to use. As soon as you click on the "Go to calculator" button
+        below, it sends you to another page containing the calculator. There, you enter your scores of as many
+        subjects you want (you can also add the subjects' names but it's optional), and when you click on the "calculate" 
+        buttona, it provides you with your GPA, letter grade, and motivational comment.
+      </p>
+      <p>
+        Have fun using the <em>Shali Grade Calculator</em>!
+      </p>
+      <a href="gradeCalculatorPage.html">Go to Calculator</a>
+    </div>
+    <button id="toggle-button">Show more</button>
     <footer>
       Made by Shalom Berhanu
       <br>Nov 2025
     </footer>
   </div>
+  
+  <script>
+    const extraInformation = document.getElementById("extra-information");
+    const toggleButton = document.getElementById("toggle-button");
+    toggleButton.addEventListener('click', function() {
+      if (extraInformation.style.display === "none") {
+        extraInformation.style.display = "block"
+        toggleButton.textContent = "Show less"
+      } else {
+        extraInformation.style.display = "none"
+        toggleButton.textContent = "Show more"
+      }
+    });
+  </script>
 </body>
 </html>
